@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PageLayout#</title>
+  </head>
+  <body style="display: flex; margin: 0%; overflow: hidden">
+    <div class="leftBox">Nav</div>
+    <div class="rightBox">
+      <div class="Header">Header</div>
+      <div style="display: flex">
+        <div>
+          <div class="Article">
+            Article
+            <div class="animation"></div>
+          </div>
+          <div class="Footer">Footer</div>
+        </div>
+        <div class="Aside">Aside</div>
+      </div>
+    </div>
+  </body>
+  <style>
+    .leftBox {
+      background-color: skyblue;
+      width: 18%;
+      height: 100vh;
+    }
+    .Header {
+      background-color: rgb(213, 216, 59);
+      height: 18%;
+      width: auto;
+    }
+    .Aside {
+      background-color: skyblue;
+      width: 39vh;
+      height: 81vh;
+    }
+    .Article {
+      background-color: #d4dbd7;
+      width: 67vw;
+      height: 82%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .Footer {
+      background-color: rgb(213, 216, 59);
+      height: 20%;
+    }
+    @media only screen and (min-width: 600px) and (max-width: 700px) {
+      .Article {
+        background-color: rgb(39, 44, 42);
+      }
+      .animation {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(182, 120, 120);
+      animation-name: example;
+      animation-duration: 4s;
+      border-radius: 20%;
+    }
+
+    @keyframes example {
+      from {
+        background-color: red;
+      }
+      to {
+        background-color: yellow;
+      }
+    }
+    }
+   
+  </style>
+</html>
