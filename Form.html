@@ -1,0 +1,165 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body
+    style="display: flex; justify-content: center; align-items: center"
+    style="padding: 3%; margin: 5%"
+  >
+    <div class="container">
+      <form>
+        <header class="headercontainer">
+          <h1
+            style="
+              font-family: Calibri, 'Trebuchet MS', sans-serif;
+              margin: 2%;
+              text-shadow: 2px whitesmoke;
+            "
+          >
+            HTML 5 Form
+          </h1>
+        </header>
+        <div>
+          <label for="text">Name: </label>
+          <input type="text" id="text" name="text" />
+          <error-output class="text-error" for="text"></error-output>
+        </div>
+        <div>
+          <label for="pwd">Password: </label>
+          <input type="password" id="pwd" name="pwd" />
+        </div>
+        <div>
+          <label for="email">Email: </label>
+          <input type="email" id="email" name="email" />
+        </div>
+        <div>
+          <label for="url">Url : </label>
+          <input type="url" id="url" name="url" />
+        </div>
+        <div>
+          <label for="number">Number : </label>
+          <input type="number" id="number" name="number" />
+        </div>
+        <div>
+          <label for="tel">Telephone : </label>
+          <input type="tel" id="tel" name="tel" />
+        </div>
+        <div>
+          <label for="Search">Search : </label>
+          <input type="Search" id="Search" name="Search" />
+        </div>
+        <div class="nativeDateTimePicker">
+          <label for="party">Date & Time :</label>
+          <input type="datetime-local" id="party" name="bday" />
+          <span class="validity"></span>
+        </div>
+        <div>
+          <label for="salary"> Salary :</label>
+          <input
+            type="range"
+            name="salary"
+            id="salary"
+            min="300000"
+            max="500000"
+            step="100"
+            value="400000"
+          />
+          <output class="salary-output" for="salary">400000</output>
+        </div>
+        <div
+          style="display: flex; align-items: center; justify-content: center"
+        >
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      const text = document.querySelector("#text");
+      const textError = document.querySelector(".text-error");
+      text.oninput = function () {
+        let nameregex = RegExp("^[A-Z]{1}[a-z]{2,}$");
+        if (nameregex.test(text.value)) textError.textContent = "";
+        else textError.textContent = "Name is Incorrect";
+      };
+      const salary = document.querySelector("#salary");
+      const output = document.querySelector(".salary-output");
+      output.textContent = salary.value;
+      salary.addEventListener("input", function () {
+        output.textContent = salary.value;
+      });
+    </script>
+  </body>
+  <style>
+    html,
+    input {
+      font-family: sans-serif;
+    }
+    label {
+      display: flex;
+      align-items: flex-start;
+    }
+    body {
+      width: 100%;
+      max-width: 600px;
+      margin: 0px;
+      padding: 20px;
+    }
+    .headercontainer {
+      display: flex;
+      flex-flow: column wrap;
+      align-content: center;
+      background: rgb(184, 101, 72);
+      border-radius: 10%;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    form {
+      margin-top: 50px;
+    }
+    div {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    label,
+    input,
+    button {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    label {
+      text-align: right;
+      width: 30%;
+      margin-right: 2%;
+    }
+    input {
+      flex: auto;
+    }
+    button {
+      width: 50%;
+      margin: 0%;
+    }
+    error-output {
+      font-size: 12px;
+      font-style: italic;
+      color: red;
+    }
+    html {
+      width: auto;
+      display: flex;
+      justify-content: center;
+      background-image: linear-gradient(#749eb37a, #6869ad);
+      /* background-color:#749eb37a; */
+    }
+    .container {
+      background-color: #aaa;
+      border: solid white;
+      border-radius: 10%;
+      padding: 7px 26px 5px 25px;
+      box-shadow: 12px 23px 23px 1px #282829;
+    }
+  </style>
+</html>
